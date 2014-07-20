@@ -13,6 +13,6 @@
     "express-ifttt": "0.0.1",
     "express": "^4.4.1",
     "sonos-discovery": "git+https://github.com/jishi/node-sonos-discovery.git#master",
-    "node-tts-api": "0.0.4"
+    "node-tts-api": "0.0.5"
   }
 }
