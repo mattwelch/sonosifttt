@@ -76,12 +76,13 @@ app.post('/xmlrpc.php', ifttt, function(req, res) {
         for (var i = 0; i < players.length; i++) {
             var player = players[i];
             if (player.state.currentState === 'PLAYING') continue;
-            player.replaceWithFavorite(req.body.description, function(success) {
-                if (success)
-                    player.play();
-                else {
-                    console.log('didnt find it');
+            player.replaceWithFavorite(req.body.description, function(err) {
+                if (err) {
+                    console.error(err);
+                    return;
                 }
+                
+                player.play();
             });
         }
     }
